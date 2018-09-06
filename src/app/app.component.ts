@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-//import { NewsitemcontainerComponent } from './newsitemcontainer/newsitemcontainer.component';
-import { environment } from '../environments/environment'
+import { NewsService } from './_services/news.service';
+import { Observable } from 'rxjs';
+import * as sampleSize from 'lodash/sampleSize'
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,20 @@ import { environment } from '../environments/environment'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'news-app-angular - ' + environment.news_api_key;
+  title = 'TODAY\'S NEWS';
+  sources$: Object;
+
+  constructor(private news: NewsService) { }
+
+  ngOnInit() {
+
+  	this.news.sources().subscribe(
+
+  		data => {
+  			this.sources$ = sampleSize(data.sources, 3)
+  		}
+
+  		);
+
+  }
 }

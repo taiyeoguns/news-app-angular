@@ -1,17 +1,11 @@
-<p>
-  newsitemcontainer works!
-</p>
-
-<div class="card" style="width: 23rem;">
+<div class="card mb-4" style="width: 23rem;">
 
 	<div class="card-header">
-    <p class="text-center mb-0 font-weight-bold text-uppercase">Featured</p> 
+    <p class="text-center mb-0 font-weight-bold text-uppercase">{{ source.name }}</p> 
   </div>
 
-	<div class="p-2">
-		<news-item></news-item>
+	<div class="p-3">
+		<news-item *ngFor="let newsitem of newsitems$" [newsitem]="newsitem"></news-item>
 	</div>
 
 </div>
-
-

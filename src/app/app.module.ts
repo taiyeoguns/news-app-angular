@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//imports
+import { HttpClientModule } from '@angular/common/http';
+
+
 import { AppComponent } from './app.component';
 import { NewsitemComponent } from './newsitem/newsitem.component';
 import { NewsitemcontainerComponent } from './newsitemcontainer/newsitemcontainer.component';
@@ -12,7 +16,8 @@ import { NewsitemcontainerComponent } from './newsitemcontainer/newsitemcontaine
     NewsitemcontainerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
