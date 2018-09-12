@@ -3,6 +3,8 @@ import { NewsService } from './_services/news.service';
 import { Observable } from 'rxjs';
 import * as sampleSize from 'lodash/sampleSize'
 
+import { Source } from './_models/news/Source'
+
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,7 @@ import * as sampleSize from 'lodash/sampleSize'
 })
 export class AppComponent {
   title = 'TODAY\'S NEWS';
-  sources$: Object;
+  sources: Source[];
 
   constructor(private news: NewsService) { }
 
@@ -20,7 +22,8 @@ export class AppComponent {
   	this.news.sources().subscribe(
 
   		data => {
-  			this.sources$ = sampleSize(data.sources, 3)
+
+  			this.sources = sampleSize(data.sources, 3)
   		}
 
   		);

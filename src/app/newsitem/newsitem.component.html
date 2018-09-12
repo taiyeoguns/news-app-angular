@@ -2,8 +2,8 @@
 	<img class="card-img-top" src="{{ newsitem.urlToImage }}" alt="{{ newsitem.title }}">
   <div class="card-body">
     <a href="{{ newsitem.url }}" target="_blank"><h5 class="card-title">{{ newsitem.title }}</h5></a>
-    <p class="card-text pb-6">{{ newsitem.description }}</p>
-    <p href="#" class="">By: {{ newsitem.author }}</p>
+    <p class="card-text pb-6"><small>{{ newsitem.description }}</small></p>
+    <p href="#" class=""><small>By: {{ newsitem.author }}</small></p>
   </div>
 <div class="card-footer">
   <small class="text-muted">{{ newsitem.publishedAt | date:'medium' }}</small>

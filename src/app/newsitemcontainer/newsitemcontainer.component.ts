@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../_services/news.service';
-import { Observable } from 'rxjs';
+
+import { Source } from '../_models/news/Source'
+import { NewsItem } from '../_models/news/NewsItem'
+
 import * as _ from 'lodash';
 
 @Component({
@@ -11,8 +14,8 @@ import * as _ from 'lodash';
 })
 export class NewsitemcontainerComponent implements OnInit {
 
-  newsitems$;
-  source;
+  newsitems: NewsItem[];
+  source: Source;
 
   constructor(private news: NewsService) { }
 
@@ -21,7 +24,8 @@ export class NewsitemcontainerComponent implements OnInit {
   	this.news.headlines(this.source.id).subscribe(
 
   		data => {
-  			this.newsitems$ = _.sampleSize(data.articles, 5)
+
+        this.newsitems = _.sampleSize(data.articles, 5)
   		}
 
   		);

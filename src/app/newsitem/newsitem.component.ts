@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsItem } from '../_models/news/NewsItem'
+
 
 @Component({
   selector: 'news-item',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsitemComponent implements OnInit {
 
-  newsitem;
+  newsitem: NewsItem;
 
   constructor() { }
 
