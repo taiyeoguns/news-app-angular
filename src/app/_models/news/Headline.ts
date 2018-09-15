@@ -1,6 +1,6 @@
 import { NewsItem } from './NewsItem'
 
-export class Headline {
+export interface Headline {
 	
 	status: string;
 	totalResults: string;

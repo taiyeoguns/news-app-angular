@@ -1,4 +1,4 @@
-export class NewsItem {
+export interface NewsItem {
 	
 	source: {
 		id: string;

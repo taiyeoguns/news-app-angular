@@ -1,6 +1,6 @@
 import { Source } from './Source'
 
-export class SourceList {
+export interface SourceList {
 	
 	status: string;
 	sources: Source[];

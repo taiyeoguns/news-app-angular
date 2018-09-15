@@ -1,4 +1,4 @@
-export class Source {
+export interface Source {
 	
 	id: string;
 	name: string;
