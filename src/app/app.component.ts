@@ -10,7 +10,7 @@ import { Source } from "./_models/news/Source";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "TODAY'S NEWS";
+  title = "News App - Angular";
   sources: Source[];
 
   constructor(private news: NewsService) {}

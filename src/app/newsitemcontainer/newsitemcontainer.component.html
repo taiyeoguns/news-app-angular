@@ -1,10 +1,10 @@
-<div class="card mb-4" style="width: 23rem;">
+<div class="col s12 m4">
 
-	<div class="card-header">
-    <p class="text-center mb-0 font-weight-bold text-uppercase">{{ source.name }}</p> 
-  </div>
+	<div class="grey lighten-4 center" style="padding: 10px; margin-bottom: 15px; font-weight: 400; border: 1px solid #c7c7c7">
+    	<h5 class="red-text text-darken-2">{{ source.name }}</h5>
+  	</div>
 
-	<div class="p-3">
+	<div>
 		<news-item *ngFor="let newsitem of newsitems" [newsitem]="newsitem"></news-item>
 	</div>
 

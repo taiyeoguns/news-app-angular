@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { environment } from "../../environments/environment";
 
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -16,21 +15,13 @@ export class NewsService {
 
   sources(): Observable<Source> {
     return this.http
-      .get<Source>(
-        "https://newsapi.org/v2/sources?language=en&apiKey=" +
-          environment.news_api_key
-      )
+      .get<Source>("/backend/sources")
       .pipe(map((res: any) => res.sources));
   }
 
   headlines(source: string): Observable<NewsItem> {
     return this.http
-      .get<NewsItem>(
-        "https://newsapi.org/v2/top-headlines?sources=" +
-          source +
-          "&apiKey=" +
-          environment.news_api_key
-      )
+      .get<NewsItem>("/backend/headlines/" + source)
       .pipe(map((res: any) => res.articles));
   }
 }

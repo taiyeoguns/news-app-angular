@@ -6,10 +6,10 @@ Built with [Angular](https://github.com/angular/angular) as frontend JavaScript 
 
 ## Requirements
 
-- [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5
-- [Bootstrap 4](https://getbootstrap.com/)
-- [Node.js](https://nodejs.org/en/) >8.x and [npm](https://www.npmjs.com/)
-- [News API](https://newsapi.org/) key
+-   [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5
+-   [Materialize CSS](https://materializecss.com)
+-   [Node.js](https://nodejs.org/en/) >8.x and [npm](https://www.npmjs.com/)
+-   [News API](https://newsapi.org/) key
 
 ## Installation
 
@@ -31,7 +31,6 @@ npm install
 
 Head to [http://newsapi.org](http://newsapi.org), signup or login to and get an API key
 
-
 ### Add details in `.env` file
 
 Create `.env` file from example file and maintain necessary details in it e.g. API Key etc
@@ -40,9 +39,13 @@ Create `.env` file from example file and maintain necessary details in it e.g. A
 cp .env.example .env
 ```
 
-### Development Server
-Run `npm start` for a development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Start backend server
 
+Run `node server.js` to start Express backend service.
+
+### Development Server
+
+Run `ng serve --proxy-config proxy.conf.json` for a development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Other
 
